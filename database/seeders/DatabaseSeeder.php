@@ -25,6 +25,14 @@ class DatabaseSeeder extends Seeder
             'balance' => 0,
         ]);
 
+        User::factory()->create([
+            'email' => 'customer@example.com',
+            'name' => 'Customer User',
+            'role' => 'customer',
+            'password' => bcrypt('password'),
+            'balance' => 999,
+        ]);
+
         User::factory(10)->create();
 
         Category::factory(10)->create()->each(function ($category) {
